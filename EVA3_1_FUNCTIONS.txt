@@ -1,0 +1,48 @@
+ MySQL  localhost:3306 ssl  SQL > use empresa;
+Default schema set to `empresa`.
+Fetching global names, object names from `empresa` for auto-completion... Press ^C to stop.
+ MySQL  localhost:3306 ssl  empresa  SQL > show tables;
++-------------------+
+| Tables_in_empresa |
++-------------------+
+| countries         |
+| departments       |
+| employees         |
+| job_history       |
+| jobs              |
+| locations         |
+| regions           |
++-------------------+
+7 rows in set (0.0018 sec)
+ MySQL  localhost:3306 ssl  empresa  SQL > select regresa_valor();
++-----------------+
+| regresa_valor() |
++-----------------+
+|               1 |
++-----------------+
+1 row in set (0.0053 sec)
+ MySQL  localhost:3306 ssl  empresa  SQL > select show message();
+ERROR: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'show message()' at line 1
+ MySQL  localhost:3306 ssl  empresa  SQL > select show message('Hola mi pa');
+ERROR: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'show message('Hola mi pa')' at line 1
+ MySQL  localhost:3306 ssl  empresa  SQL > select show_message('Hola mi pa');
++----------------------------+
+| show_message('Hola mi pa') |
++----------------------------+
+| Tu mensaje: Hola mi pa     |
++----------------------------+
+1 row in set (0.0011 sec)
+ MySQL  localhost:3306 ssl  empresa  SQL > select sum_num(5,5);
++--------------+
+| sum_num(5,5) |
++--------------+
+|           10 |
++--------------+
+1 row in set (0.0009 sec)
+ MySQL  localhost:3306 ssl  empresa  SQL > select sum_num(10,10)
+                                        -> ;
++----------------+
+| sum_num(10,10) |
++----------------+
+|             20 |
++----------------+
