@@ -1,0 +1,62 @@
+Fetching global names, object names from `tbd_e3` for auto-completion... Press ^C to stop.
+ MySQL  localhost:3306 ssl  tbd_e3  SQL > select comparar_numeros(10,8);
++------------------------+
+| comparar_numeros(10,8) |
++------------------------+
+| Numero 1 es mayor      |
++------------------------+
+1 row in set (0.0034 sec)
+ MySQL  localhost:3306 ssl  tbd_e3  SQL > select comparar_numeros(8,10);
++------------------------+
+| comparar_numeros(8,10) |
++------------------------+
+| Numero 2 es mayor      |
++------------------------+
+1 row in set (0.0010 sec)
+ MySQL  localhost:3306 ssl  tbd_e3  SQL > select comparar_numeros(8,7);
++-----------------------+
+| comparar_numeros(8,7) |
++-----------------------+
+| Numero 1 es mayor     |
++-----------------------+
+1 row in set (0.0006 sec)
+ MySQL  localhost:3306 ssl  tbd_e3  SQL > select comparar_numeros(7,7);
+ERROR: 1406 (22001): Data too long for column 'resultado' at row 1
+ MySQL  localhost:3306 ssl  tbd_e3  SQL > select es_par(10);
++------------+
+| es_par(10) |
++------------+
+| ES PAR     |
++------------+
+1 row in set (0.0010 sec)
+ MySQL  localhost:3306 ssl  tbd_e3  SQL > select es_par(11);
++------------+
+| es_par(11) |
++------------+
+| ES IMPAR   |
++------------+
+1 row in set (0.0007 sec)
+ MySQL  localhost:3306 ssl  tbd_e3  SQL > select dia_semana(1);
++---------------+
+| dia_semana(1) |
++---------------+
+| Domingo       |
++---------------+
+1 row in set (0.0027 sec)
+ MySQL  localhost:3306 ssl  tbd_e3  SQL > select conversion_temp(10)
+                                       -> ;
+ERROR: 1318 (42000): Incorrect number of arguments for FUNCTION tbd_e3.conversion_temp; expected 2, got 1
+ MySQL  localhost:3306 ssl  tbd_e3  SQL > select conversion_temp(1,10) ;
++-----------------------+
+| conversion_temp(1,10) |
++-----------------------+
+|                  NULL |
++-----------------------+
+1 row in set (0.0005 sec)
+ MySQL  localhost:3306 ssl  tbd_e3  SQL > select conversion_temp(1,10) ;
++-----------------------+
+| conversion_temp(1,10) |
++-----------------------+
+|                  NULL |
++-----------------------+
+1 row in set (0.0007 sec)
