@@ -1,0 +1,58 @@
+MySQL Shell 8.0.38
+
+Copyright (c) 2016, 2024, Oracle and/or its affiliates.
+Oracle is a registered trademark of Oracle Corporation and/or its affiliates.
+Other names may be trademarks of their respective owners.
+
+Type '\help' or '\?' for help; '\quit' to exit.
+ MySQL  JS > \sql
+Switching to SQL mode... Commands end with ;
+ MySQL  SQL > \connect -mc root@localhost
+WARNING: The -mc option was deprecated, please use --mc instead. (Option has been processed as --mc).
+Creating a Classic session to 'root@localhost'
+Fetching global names for auto-completion... Press ^C to stop.
+Your MySQL connection id is 8
+Server version: 8.0.39 MySQL Community Server - GPL
+No default schema selected; type \use <schema> to set one.
+ MySQL  localhost:3306 ssl  SQL > use tbd_e3;
+Default schema set to `tbd_e3`.
+Fetching global names, object names from `tbd_e3` for auto-completion... Press ^C to stop.
+ MySQL  localhost:3306 ssl  tbd_e3  SQL > create table prueba(id int key not null);
+Query OK, 0 rows affected (0.0304 sec)
+ MySQL  localhost:3306 ssl  tbd_e3  SQL > desc prueba;
++-------+------+------+-----+---------+-------+
+| Field | Type | Null | Key | Default | Extra |
++-------+------+------+-----+---------+-------+
+| id    | int  | NO   | PRI | NULL    |       |
++-------+------+------+-----+---------+-------+
+1 row in set (0.0029 sec)
+ MySQL  localhost:3306 ssl  tbd_e3  SQL > CALL INSERTAR_PRUEBA(2);
++------------------------------+
+| MENSAJE                      |
++------------------------------+
+| CLAVE CORRECTAMENTE AGREGADA |
++------------------------------+
+1 row in set (0.0121 sec)
+
+Query OK, 0 rows affected (0.0121 sec)
+ MySQL  localhost:3306 ssl  tbd_e3  SQL > CALL INSERTAR_PRUEBA(2);
++-------------------------+
+| MENSAJE                 |
++-------------------------+
+| ERROR: CLABE DUCPLICADA |
++-------------------------+
+1 row in set (0.0012 sec)
+
+Query OK, 0 rows affected (0.0012 sec)
+ MySQL  localhost:3306 ssl  tbd_e3  SQL > use empresa;
+Default schema set to `empresa`.
+Fetching global names, object names from `empresa` for auto-completion... Press ^C to stop.
+ MySQL  localhost:3306 ssl  empresa  SQL > SET @VALOR = 0;
+Query OK, 0 rows affected (0.0021 sec)
+ MySQL  localhost:3306 ssl  empresa  SQL > CALL CONTAR_PAISES(@VALOR);
+Query OK, 0 rows affected (0.0159 sec)
+ MySQL  localhost:3306 ssl  empresa  SQL > SELECT @VALOR;
++--------+
+| @VALOR |
++--------+
+|     28 |
